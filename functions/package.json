@@ -1,5 +1,6 @@
 {
   "name": "functions",
+  "license":"CC-BY-NC-ND-4.0",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "prebuild": "npx copyfiles \"./src/media/**/*+(.png|.jpg|.ttf)\" ./lib/media -u 2",

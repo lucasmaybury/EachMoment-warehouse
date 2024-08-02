@@ -1,3 +1,5 @@
+This repo is copied over from the original private repo owned by EachMoment with their permission.
+
 # EachMoment Warehouse App
 
 [Trello board](https://trello.com/b/JpDSWAjy/eachmoment-warehouse-app)
