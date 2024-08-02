@@ -1,0 +1,12 @@
+﻿build
+webapp/node_modules
+dist
+webapp/.env
+node_modules
+.env
+.firebase
+.env.*
+*.log
+functions/src/utils/tests/generateHashes.js
+quoteCalc/.vite/deps
+**/.DS_store

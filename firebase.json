@@ -1,0 +1,52 @@
+{
+  "hosting": [
+    {
+      "target": "webapp",
+      "public": "webapp/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "source": "functions",
+    "codebase": "functions",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ]
+  },
+  "emulators": {
+    "ui": {
+      "enabled": true,
+      "host": "localhost",
+      "port": 4000
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": 5000
+    },
+    "functions": {
+      "host": "localhost",
+      "port": 5001
+    },
+    "database": {
+      "host": "localhost",
+      "port": 9000,
+      "rules": "database.rules.json"
+    },
+    "singleProjectMode": true
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

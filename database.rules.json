@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "shopify-orders": {
+      ".read": "auth.uid != null",
+      "$order-id": {
+        ".write": "auth.uid != null"
+      }
+    },
+    "recorders": {
+      ".read": "auth.uid != null",
+      "$recorder-id": {
+        ".write": "auth.uid != null"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": false,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "types": ["./src/types/index.d.ts"],
+      "values": ["./src/values/index.ts"],
+      "utils": ["./src/utils/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "rootDir": ".",
+  "moduleResolution": "node",
+  "compileOnSave": true,
+  "include": ["src", "src/**/*.json", "src/functions/handleQuoteRequest"]
+}

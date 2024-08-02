@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html,
+  #App {
+    @apply w-full h-dvh max-h-dvh;
+  }
+
+  .table-zebra tbody tr:nth-child(even) .media-type-icons {
+    @apply bg-base-100;
+  }
+
+  .table-sm tbody tr td {
+    @apply p-2;
+  }
+
+  tr td {
+    @apply my-auto;
+  }
+
+  .badge {
+    @apply px-3 py-4;
+  }
+
+  .badge.badge-indicator {
+    @apply p-2;
+  }
+
+  span {
+    @apply h-fit;
+  }
+
+  .btn {
+    flex-wrap: nowrap;
+    @apply font-normal;
+  }
+
+  .btn-info {
+    @apply text-base-100;
+  }
+
+  .muted::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.5);
+  }
+
+  .shadow-square-md {
+    box-shadow: 0 0 10px -7px black;
+  }
+}

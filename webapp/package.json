@@ -1,0 +1,47 @@
+{
+  "name": "webapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "vite --mode test",
+    "dev": "firebase use test && firebase emulators:start",
+    "build:prod": "tsc && vite build --mode production",
+    "build": "tsc && vite build --mode test",
+    "build:watch": "npm run build -- --watch",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "deploy": "firebase deploy --only hosting",
+    "deploy:prod": "firebase use default && npm run build -- --mode production && npm run deploy",
+    "deploy:test": "firebase use test && npm run build -- --mode test && npm run deploy"
+  },
+  "dependencies": {
+    "@types/tailwindcss": "^3.1.0",
+    "@yudiel/react-qr-scanner": "^1.2.10",
+    "dayjs": "^1.11.10",
+    "firebase": "^10.6.0",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "daisyui": "^4.6.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "prettier": "3.2.5",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.0",
+    "react-tabs": "^6.0.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2"
+  }
+}

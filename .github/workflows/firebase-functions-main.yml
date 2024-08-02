@@ -1,0 +1,39 @@
+# name: Deploy Functions to Prod
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - functions/**
+#       - .github/workflows/firebase-functions-main.yml
+#       - firebase.json
+#       - .firebaserc
+# jobs:
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+#     env:
+#       GOOGLE_APPLICATION_CREDENTIALS: google-application-credentials.json
+#       VITE_SERVICE_ACCOUNT_FULL: "${{ secrets.FIREBASE_FUNCTIONS_SERVICE_ACCOUNT }}"
+#       VITE_DATABASE_URL: "${{ vars.FIREBASE_DATABASE_URL_PROD }}"
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: "Install and Build"
+#         run: |
+#           (npm ci && npm run build)
+#         working-directory: functions
+
+#       - name: Prepare Google Application Credentials
+#         shell: bash
+#         run: |
+#           echo "${{ secrets.FIREBASE_GITHUB_SERVICE_ACCOUNT }}" | base64 --decode > "google-application-credentials.json"
+
+#       - name: Deploy Firebase functions
+#         run: |
+#           npx firebase-tools use default
+#           npx firebase-tools deploy --only functions --non-interactive --debug
+
+#       - name: Remove credentials file
+#         if: success() || failure()
+#         run: |
+#           rm google-application-credentials.json

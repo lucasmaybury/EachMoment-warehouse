@@ -1,0 +1,23 @@
+# name: Deploy Webapp to PR Env
+# on:
+#   pull_request:
+#     paths:
+#       - webapp/**
+#       - .github/workflows/firebase-hosting-pr.yml
+#       - firebase.json
+#       - .firebaserc
+# jobs:
+#   build_and_preview:
+#     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+#     runs-on: ubuntu-latest
+#     env:
+#       VITE_FIREBASE_CONFIG_FULL: "${{ vars.VITE_FIREBASE_CONFIG_DEV }}"
+#     steps:
+#       - uses: actions/checkout@v4
+#       - run: (npm ci && npm run build)
+#         working-directory: webapp
+#       - uses: FirebaseExtended/action-hosting-deploy@v0
+#         with:
+#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_EACH_MOMENT }}"
+#           projectId: each-moment-test

@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "default": "each-moment-warehouse",
+    "test": "each-moment-test"
+  },
+  "targets": {
+    "each-moment-warehouse": {
+      "hosting": {
+        "webapp": [
+          "each-moment-warehouse"
+        ]
+      }
+    },
+    "each-moment-test": {
+      "hosting": {
+        "webapp": [
+          "each-moment-test"
+        ]
+      }
+    }
+  }
+}
